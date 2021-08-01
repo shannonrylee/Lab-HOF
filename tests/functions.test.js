@@ -1,55 +1,53 @@
 const functions = require('../index')
+const nums = [...Array(15)].map((_, i) => i + 1)
 
 console.error = jest.fn()
 describe('Higher Order Functions', () => {
-  test('getSquares should return an array of squares for the provided array', () => {
-    let arr = [1, 2, 3, 4, 5]
-    expect(functions.getSquares(arr)).toEqual([1, 4, 9, 16, 25])
+  it('getSquares should return an array of all numbers multiplied by 2', () => {
+    expect(functions.getSquares(nums)).toEqual(nums.map((n) => n * 2))
   })
-  test('isDivBy3 should return an array of booleans indicating whether the element is divisible by 3', () => {
-    let arr = [1, 3, 4, 6, 7, 8, 9]
-    expect(functions.isDivBy3(arr)).toEqual([
-      false,
-      true,
-      false,
-      true,
-      false,
-      false,
-      true
-    ])
+  it('isDivBy3 should return an array booleans if the number is divisible by 3', () => {
+    expect(functions.isDivBy3(nums)).toEqual(
+      nums.map((n) => (n % 3 === 0 ? true : false))
+    )
   })
-  test('filterOdds should return an array of only odd numbers', () => {
-    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    expect(functions.filterOdds(arr)).toEqual([1, 3, 5, 7, 9])
+  it('filterOdds should return an array of only odd numbers', () => {
+    expect(functions.filterOdds(nums)).toEqual(nums.filter((n) => n % 2 !== 0))
   })
-  test('filterEvens should return an array of only even numbers', () => {
-    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    expect(functions.filterEvens(arr)).toEqual([2, 4, 6, 8, 10])
+  it('filterEvens should return an array of only even numbers', () => {
+    expect(functions.filterEvens(nums)).toEqual(nums.filter((n) => n % 2 === 0))
   })
-  test('filterDivBy4 should return an array of only numbers that are divisible by', () => {
-    let arr = [1, 4, 6, 8, 12, 13]
-    expect(functions.filterDivBy4(arr)).toEqual([4, 8, 12])
+  it('filterDivBy4 should return an array of numbers that are divisible by 4', () => {
+    expect(functions.filterDivBy4(nums)).toEqual(
+      nums.filter((n) => n % 4 === 0)
+    )
   })
-  test('addAllUp should return the total sum of the numbers in the array', () => {
-    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    expect(functions.addAllUp(arr)).toEqual(55)
+  it('addAllUp should return the total sum of all numbers in the array', () => {
+    expect(functions.addAllUp(nums)).toEqual(
+      nums.reduce((ac, n) => (ac += n), 0)
+    )
   })
-  test('multiplyAllNums should return the total product of all numbers', () => {
-    let arr = [1, 2, 3, 4, 5]
-    expect(functions.multiplyAllNums(arr)).toEqual(120)
+  it('multiplyAllNums should return the total product of all numbers in the array', () => {
+    expect(functions.multiplyAllNums(nums)).toEqual(
+      nums.reduce((ac, n) => (ac *= n), 1)
+    )
   })
-  // Bonus
-  test('sumSquareAllNums should return the total sum of all numbers squared', () => {
-    let arr = [3, 2, 3]
-    expect(functions.sumSquareAllNums(arr)).toEqual(6561)
+})
+
+describe('Bonuses', () => {
+  it('sumSquareAllNums should return the total sum of all numbers to the second power', () => {
+    expect(functions.sumSquareAllNums(nums)).toEqual(
+      nums.reduce((ac, n) => (ac += Math.pow(n, 2)), 0)
+    )
   })
-  test('addAllAges should return the sum of all ages in the provided array', () => {
-    let arr = [
+  it('addAllAges should return the total sum of all ages in the provided array', () => {
+    let persons = [
       { name: 'Carl', age: 30 },
       { name: 'Cara', age: 10 },
       { name: 'Carmen', age: 15 }
     ]
-    expect(functions.addAllAges(arr)).toEqual(55)
+    expect(functions.addAllAges(persons)).toEqual(
+      persons.reduce((ac, person) => (ac += person.age), 0)
+    )
   })
-  // Bonus
 })

@@ -18,4 +18,10 @@ In this lab, you will create functions that accomplish the specified goal to pra
 
 ## Instructions
 
-Follow the prompts in the provided `index.js`. Once completed you should have `7` passing tests not including the bonuses. Test your work as you go in the provided functions. Don't spend too much time on one function! If you get stuck move on to the next one.
+Follow the prompts in the provided `index.js`. Once completed you should have `7` passing tests **not including the bonuses**. The unit tests will restart once you save your `index.js`. Don't spend too much time on one function! If you get stuck move on to the next one.
+
+To exit the unit tests, in your terminal press <kbd>ctrl</kbd>+<kbd>c</kbd> or <kbd>q</kbd>
+
+## Submission
+
+Submit a pull request utilizing the [PR Guidelines](https://github.com/SEI-R-7-26/template_pull_request)
