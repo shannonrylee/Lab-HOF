@@ -1,6 +1,6 @@
 # Higher Order Functions Exercise
 
-![Map](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia1.tenor.com%2Fimages%2F27c19b8cac761b97fb87c1868a349dce%2Ftenor.gif%3Fitemid%3D11835765&f=1&nofb=1)
+![Map](https://miro.medium.com/max/2000/1*KbE6qWmCQg5isyMRQzwfpg.png)
 
 ## Overview
 
