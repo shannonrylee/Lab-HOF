@@ -4,7 +4,7 @@
 
 ## Overview
 
-In this lab, you will create functions that accomplish the specified goal to practice using High Order Functions.
+In this lab, you will create functions that accomplish the specified goal to practice using Higher Order Functions.
 
 ## Getting Started
 
