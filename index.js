@@ -8,9 +8,8 @@ const array = [1, 2, 3, 10, 11, 13, 16];
 
 const getSquares = array.map((arr) => {
   const multiply = arr * 2;
-  // return
-  // console.log(getSquare);
-  // return multiply
+  console.log(getSquare);
+  return multiply;
 });
 
 /**
@@ -19,6 +18,7 @@ const getSquares = array.map((arr) => {
 
 const isDivBy3 = array.map((arr) => {
   console.log(Number.isInteger(arr / 3));
+  return arr / 3;
 
   /**
    * Use .map to return an array of booleans, if the number is divisible by 3 return true otherwise false
@@ -31,6 +31,7 @@ const filterOdds = array.filter((arr) => {
     let finalArr = [];
     finalArr = finalArr + arr;
     console.log(finalArr);
+    return arr % 2;
   }
 });
 
@@ -42,6 +43,7 @@ const filterOdds = array.filter((arr) => {
 const filterEvens = array.filter((arr) => {
   if (arr % 2 !== 0) {
     console.log(arr);
+    return arr % 2;
   }
 });
 /**
@@ -52,6 +54,7 @@ const filterEvens = array.filter((arr) => {
 const filterDivBy4 = array.filter((arr) => {
   if (arr % 4 == 0) {
     console.log(arr);
+    return arr % 4;
   }
 });
 /**
